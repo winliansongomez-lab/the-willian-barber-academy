@@ -3,32 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Willian Barber Academy</title>
+<meta name="description" content="The Willian Barber - barbería, cortes, tratamientos y promociones.">
+<meta name="theme-color" content="#080808">
+<title>The Willian Barber | Barbería</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-body{margin:0;font-family:sans-serif;background:#0a0a0a;color:white;text-align:center}
-header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70') center/cover}
-h1{color:gold;font-size:40px}
-.btn{background:gold;color:black;padding:15px 30px;text-decoration:none;border-radius:30px;margin-top:20px}
-section{padding:50px}
-.card{background:#1a1a1a;margin:10px;padding:20px;border-radius:10px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif;scroll-behavior:smooth}
+html{scroll-padding-top:80px}
+body{background:#080808;color:#fff;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:16px 6%;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,215,0,.15)}
+.logo{color:gold;font-size:20px;font-weight:800;text-decoration:none;white-space:nowrap}
+.nav-links{display:flex;align-items:center;gap:22px;list-style:none}
+.nav-links a{color:#fff;text-decoration:none;font-size:14px;transition:.3s}
+.nav-links a:hover{color:gold}
+.menu-btn{display:none;color:gold;font-size:28px;cursor:pointer;border:0;background:transparent}
+header{min-height:100vh;background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.82)),url("imagenes/barberia.jpg");background-size:cover;background-position:center;display:flex;justify-content:center;align-items:center;text-align:center;padding:100px 20px 50px}
+.hero-content{max-width:850px;animation:aparecer 1.2s ease}
+.hero-badge{display:inline-block;color:#111;background:gold;padding:8px 16px;border-radius:30px;font-size:13px;font-weight:800;letter-spacing:1px;margin-bottom:18px}
+.trust-strip{display:grid;grid-template-columns:repeat(3,1fr);max-width:1000px;margin:-35px auto 0;position:relative;z-index:5;background:#151515;border:1px solid rgba(255,215,0,.25);border-radius:18px;overflow:hidden;box-shadow:0 12px 35px rgba(0,0,0,.35)}
+.trust-strip div{padding:22px 15px;display:flex;align-items:center;justify-content:center;gap:10px;border-right:1px solid #292929}
+.trust-strip div:last-child{border-right:0}
+.trust-strip strong{font-size:22px}
+.trust-strip span{color:#ddd;font-size:14px;font-weight:600}
+.btn-book{box-shadow:0 8px 25px rgba(255,215,0,.18)}
+
+.hero-content h1{font-size:clamp(38px,7vw,70px);color:gold;line-height:1.1;margin-bottom:20px}
+.hero-content p{font-size:clamp(16px,3vw,21px);color:#eee;margin-bottom:30px;line-height:1.6}
+.btn{display:inline-block;padding:14px 30px;margin:5px;background:gold;color:#000;text-decoration:none;font-weight:700;border-radius:30px;transition:.3s;border:2px solid gold}
+.btn:hover{transform:translateY(-4px);background:#fff;border-color:#fff;box-shadow:0 8px 25px rgba(255,215,0,.3)}
+.btn-outline{background:transparent;color:gold}
+.btn-outline:hover{background:gold;color:#000;border-color:gold}
+section{padding:90px 7%;text-align:center}
+.section-title{color:gold;font-size:clamp(28px,5vw,40px);margin-bottom:15px}
+.section-subtitle{color:#bbb;max-width:700px;margin:0 auto 45px;line-height:1.6}
+.about{background:#101010}
+.about-box{max-width:850px;margin:auto;line-height:1.8;color:#ddd}
+.schedule{margin:35px auto 0;padding:25px;border:1px solid rgba(255,215,0,.4);border-radius:15px;background:#151515;max-width:500px}
+.schedule h3{color:gold;margin-bottom:10px}
+.schedule p{font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px;max-width:1100px;margin:auto}
+.card{background:#171717;padding:30px 22px;border-radius:18px;border:1px solid #282828;transition:.4s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-10px);border-color:rgba(255,215,0,.5);box-shadow:0 15px 35px rgba(255,215,0,.12)}
+.card h3{color:gold;font-size:20px;margin-bottom:12px}
+.price{font-size:31px;font-weight:800;margin-bottom:15px}
+.card p{color:#bbb;line-height:1.6}
+.promotions{background:linear-gradient(135deg,#111,#181300)}
+.promotion-box{max-width:850px;margin:20px auto;padding:30px;background:#191919;border-radius:18px;border:1px solid rgba(255,215,0,.35);transition:.3s}
+.promotion-box:hover{transform:translateY(-5px)}
+.promotion-box h3{color:gold;margin-bottom:10px;font-size:23px}
+.discount{font-size:35px;color:gold;font-weight:800;margin:10px 0}
+.steps{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin:25px 0}
+.step{background:#1a1a1a;padding:15px 20px;border-radius:10px;border:1px solid #333;min-width:130px}
+.step span{display:block;color:gold;font-size:24px;font-weight:bold;margin-bottom:5px}
+.gallery{background:#111}
+.gallery-title{color:gold;margin:35px 0 20px;font-size:25px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:1100px;margin:auto}
+.gallery-item{height:280px;border-radius:15px;overflow:hidden;background:#222}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.5s;display:block}
+.gallery-item:hover img{transform:scale(1.08)}
+.diploma-card{background:#171717;border-radius:18px;overflow:hidden;border:1px solid #292929;transition:.3s}
+.diploma-card:hover{transform:translateY(-8px);border-color:gold}
+.diploma-card img{width:100%;height:300px;object-fit:cover;display:block}
+.diploma-card p{padding:18px;color:#ddd}
+.contact{background:#111}
+.contact-box{max-width:700px;margin:auto}
+.contact-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin:30px 0}
+.contact-item{padding:20px;background:#191919;border-radius:12px}
+.contact-item h3{color:gold;margin-bottom:8px}
+.whatsapp{position:fixed;right:22px;bottom:22px;width:60px;height:60px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:28px;z-index:999;box-shadow:0 5px 20px rgba(0,0,0,.4);animation:pulso 2s infinite}
+footer{background:#000;padding:30px 20px;text-align:center;color:#aaa}
+footer p+p{margin-top:8px}
+footer strong{color:gold}
+@keyframes aparecer{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.mobile-booking{display:none}
+@media(max-width:768px){
+.mobile-booking{display:block;position:fixed;left:15px;right:15px;bottom:82px;z-index:998;background:gold;color:#000;text-decoration:none;text-align:center;padding:12px 15px;border-radius:30px;font-weight:800;box-shadow:0 8px 25px rgba(0,0,0,.4)}
+}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(37,211,102,.6)}70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+@media(max-width:768px){
+.trust-strip{grid-template-columns:1fr;margin:-20px 20px 0}
+.trust-strip div{border-right:0;border-bottom:1px solid #292929;padding:15px}
+.trust-strip div:last-child{border-bottom:0}
+
+nav{padding:15px 20px}.logo{font-size:16px}.menu-btn{display:block}
+.nav-links{position:absolute;top:66px;right:-100%;width:100%;background:#080808;flex-direction:column;text-align:center;padding:25px;transition:right .4s ease;gap:20px;border-bottom:1px solid rgba(255,215,0,.2)}
+.nav-links.active{right:0}.nav-links a{font-size:16px}
+header{min-height:100vh;padding:100px 20px 50px}section{padding:65px 20px}.gallery-item{height:250px}.diploma-card img{height:240px}.promotion-box{padding:25px 18px}.whatsapp{width:55px;height:55px;right:15px;bottom:15px}
+}
+@media(max-width:400px){.logo{font-size:14px}.hero-content h1{font-size:35px}.btn{width:100%;margin:5px 0}.discount{font-size:29px}}
 </style>
-
 </head>
-<body>
 
-<header>
-<h1>The Willian Barber Academy</h1>
-<p>Aprende barbería profesional</p>
-<a class="btn" href="https://wa.me/573001112233">Inscribirme</a>
+<body>
+<nav aria-label="Navegación principal">
+<a href="#inicio" class="logo">THE WILLIAN BARBER</a>
+<button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#precios">Precios</a></li>
+<li><a href="#promociones">Promociones</a></li>
+<li><a href="#galeria">Galería</a></li>
+<li><a href="#diplomas">Certificaciones</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
+
+<header id="inicio">
+<div class="hero-content">
+<div class="hero-badge">💈 BARBERÍA PROFESIONAL</div>
+<h1>The Willian Barber</h1>
+<p>Cortes modernos y clásicos, tratamientos y atención personalizada para que luzcas tu mejor estilo.</p>
+<a class="btn btn-book" href="https://wa.me/573023165451?text=Hola%20The%20Willian%20Barber,%20quiero%20agendar%20una%20cita." target="_blank" rel="noopener noreferrer">📲 Reservar mi cita</a>
+<a class="btn btn-outline" href="#precios">💈 Ver precios</a>
+</div>
 </header>
 
-<section>
-<h2>Cursos</h2>
-<div class="card">Básico</div>
-<div class="card">Avanzado</div>
-<div class="card">Profesional</div>
+<div class="trust-strip">
+  <div><strong>✂️</strong><span>Cortes profesionales</span></div>
+  <div><strong>🔥</strong><span>Estilos modernos</span></div>
+  <div><strong>⭐</strong><span>Atención personalizada</span></div>
+</div>
+
+<section class="about" id="nosotros">
+<h2 class="section-title">💈 Sobre Nosotros</h2>
+<p class="section-subtitle">Estilo, técnica y profesionalismo en cada corte.</p>
+<div class="about-box">
+<p>En <strong>The Willian Barber</strong> ofrecemos cortes modernos y clásicos, tratamientos y atención personalizada, combinando técnica profesional con un servicio de calidad.</p>
+<div class="schedule"><h3>🕙 Horario de atención</h3><p><strong>10:00 a. m. — 9:30 p. m.</strong></p></div>
+</div>
 </section>
 
+<section id="precios">
+<h2 class="section-title">💰 Nuestros Precios</h2>
+<p class="section-subtitle">Servicios pensados para que encuentres el estilo que buscas.</p>
+<div class="grid">
+<div class="card"><h3>✂️ Corte Básico</h3><div class="price">$18.000</div><p>Corte básico realizado con técnica profesional.</p></div>
+<div class="card"><h3>🧴 Corte + Mascarilla Facial + Tinta</h3><div class="price">$35.000</div><p>Corte acompañado de mascarilla facial y aplicación de tinta.</p></div>
+<div class="card"><h3>💆 Tratamiento Capilar</h3><div class="price">$70.000</div><p>Tratamiento capilar, lavado, corte y mascarilla facial.</p></div>
+<div class="card"><h3>🎨 Corte + Pintado</h3><div class="price">$45.000</div><p>Corte, pintado del cabello, lavado, shampoo y termoprotector.</p></div>
+</div>
+</section>
+
+<section class="promotions" id="promociones">
+<h2 class="section-title">🔥 Promociones</h2>
+<p class="section-subtitle">Ven con tus amigos y aprovecha nuestros beneficios.</p>
+<div class="promotion-box">
+<h3>👥 Promoción para grupos</h3>
+<div class="discount">3% DE DESCUENTO</div>
+<p>Si vienen en un grupo de <strong>4 personas</strong>, recibirán un descuento del <strong>3%</strong>.</p>
+</div>
+<div class="promotion-box">
+<h3>🎁 Bono de Fidelidad</h3>
+<p><strong>Importante:</strong> debes solicitar tu tarjeta de fidelidad <strong>antes de realizar tu primer corte</strong>.</p>
+<div class="steps">
+<div class="step"><span>1</span>Pide tu tarjeta</div>
+<div class="step"><span>2</span>Registra tu corte</div>
+<div class="step"><span>3</span>Completa 5 cortes</div>
+<div class="step"><span>4</span>Reclama tu beneficio</div>
+</div>
+<p>Al completar <strong>5 cortes</strong> registrados en tu tarjeta de fidelidad, podrás reclamar un próximo corte <strong>a mitad de precio o gratis</strong>, de acuerdo con el beneficio que corresponda.</p>
+</div>
+</section>
+
+<section class="gallery" id="galeria">
+<h2 class="section-title">📸 Galería de Cortes</h2>
+<p class="section-subtitle">Cortes afros, clásicos y modernos.</p>
+<h3 class="gallery-title">🔥 Cortes Afros</h3>
+<div class="gallery-grid">
+<div class="gallery-item"><img src="imagenes/afro-1.jpg" alt="Corte afro 1" loading="lazy"></div>
+<div class="gallery-item"><img src="imagenes/afro-2.jpg" alt="Corte afro 2" loading="lazy"></div>
+<div class="gallery-item"><img src="imagenes/afro-3.jpg" alt="Corte afro 3" loading="lazy"></div>
+<div class="gallery-item"><img src="imagenes/afro-4.jpg" alt="Corte afro 4" loading="lazy"></div>
+</div>
+<h3 class="gallery-title">✂️ Cortes Clásicos y Modernos</h3>
+<div class="gallery-grid">
+<div class="gallery-item"><img src="imagenes/corte-1.jpg" alt="Corte clásico 1" loading="lazy"></div>
+<div class="gallery-item"><img src="imagenes/corte-2.jpg" alt="Corte moderno 2" loading="lazy"></div>
+<div class="gallery-item"><img src="imagenes/corte-3.jpg" alt="Corte moderno 3" loading="lazy"></div>
+<div class="gallery-item"><img src="imagenes/corte-4.jpg" alt="Corte clásico 4" loading="lazy"></div>
+</div>
+</section>
+
+<section id="diplomas">
+<h2 class="section-title">🏆 Certificaciones</h2>
+<p class="section-subtitle">Experiencia, técnica y preparación profesional al servicio de nuestros clientes.</p>
+<div class="grid">
+<div class="diploma-card"><img src="imagenes/diploma-1.jpg" alt="Diploma de barbería a nombre de Wilianson Gómez" loading="lazy"><p>Certificación profesional en barbería — <strong>Wilianson Gómez</strong>.</p></div>
+<div class="diploma-card"><img src="imagenes/diploma-2.jpg" alt="Certificado de especialización a nombre de Wilianson Gómez" loading="lazy"><p>Certificación de especialización — <strong>Wilianson Gómez</strong>.</p></div>
+<div class="diploma-card"><img src="imagenes/diploma-3.jpg" alt="Diploma de formación a nombre de Wilianson Gómez" loading="lazy"><p>Formación integral en barbería — <strong>Wilianson Gómez</strong>.</p></div>
+</div>
+</section>
+
+<section class="contact" id="contacto">
+<h2 class="section-title">📲 Contáctanos</h2>
+<p class="section-subtitle">Reserva tu cita y vive la experiencia de The Willian Barber.</p>
+<div class="contact-box">
+<div class="contact-info">
+<div class="contact-item"><h3>🕙 Horario</h3><p>10:00 a. m. — 9:30 p. m.</p></div>
+<div class="contact-item"><h3>📱 WhatsApp</h3><p>302 316 5451</p></div>
+<div class="contact-item"><h3>💈 Servicios</h3><p>Cortes y tratamientos</p></div>
+</div>
+<a class="btn" href="https://wa.me/573023165451?text=Hola%20The%20Willian%20Barber,%20quiero%20reservar%20una%20cita." target="_blank" rel="noopener noreferrer">📲 Reservar por WhatsApp</a>
+</div>
+</section>
+
+<footer>
+<p>© 2026 <strong>The Willian Barber</strong></p>
+<p>Estilo • Profesionalismo • Calidad</p>
+</footer>
+
+<a class="mobile-booking" href="https://wa.me/573023165451?text=Hola%20The%20Willian%20Barber,%20quiero%20agendar%20una%20cita." target="_blank" rel="noopener noreferrer">📲 Reservar cita por WhatsApp</a>
+
+<a class="whatsapp" href="https://wa.me/573023165451?text=Hola%20The%20Willian%20Barber,%20quiero%20agendar%20una%20cita." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">☎</a>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",()=>{
+  const abierto=navLinks.classList.toggle("active");
+  menuBtn.setAttribute("aria-expanded",abierto);
+  menuBtn.textContent=abierto?"✕":"☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    navLinks.classList.remove("active");
+    menuBtn.setAttribute("aria-expanded","false");
+    menuBtn.textContent="☰";
+  });
+});
+
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape"){
+    navLinks.classList.remove("active");
+    menuBtn.setAttribute("aria-expanded","false");
+    menuBtn.textContent="☰";
+  }
+});
+</script>
 </body>
-</html>
+                                                                                                                                                               </html>
+                                                                                                                                                                 
