@@ -302,6 +302,246 @@ document.addEventListener("keydown",event=>{
   margin: 0;
   font-size: 21px;
 }
-</style></body>
+/* ========================================
+   EXPERIENCIA Y CERTIFICACIONES
+======================================== */
+
+.experiencia-certificaciones {
+    padding: 70px 20px;
+    background: #080808;
+    color: white;
+    text-align: center;
+}
+
+
+/* TÍTULO PEQUEÑO */
+
+.titulo-seccion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: #ffd000;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.titulo-seccion span {
+    font-size: 28px;
+}
+
+.titulo-seccion p {
+    margin: 0;
+}
+
+
+/* TÍTULO PRINCIPAL */
+
+.experiencia-certificaciones h2 {
+    font-size: 50px;
+    margin: 10px 0;
+    line-height: 1.05;
+    font-weight: 900;
+}
+
+.experiencia-certificaciones h2 span {
+    color: #d9a928;
+}
+
+
+/* SUBTÍTULO */
+
+.subtitulo-experiencia {
+    max-width: 750px;
+    margin: 20px auto 45px;
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* CERTIFICADOS */
+
+.certificados {
+    max-width: 1350px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+.certificado {
+    text-align: center;
+}
+
+
+.certificado img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid #b58a24;
+    display: block;
+    background: #111;
+}
+
+
+.nombre-certificado {
+    color: #d9a928;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+.certificado p {
+    color: #ddd;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+
+/* EXPERIENCIA */
+
+.experiencia-box {
+    max-width: 1350px;
+    margin: 60px auto 0;
+    padding: 35px 25px;
+    border: 1px solid #b58a24;
+    border-radius: 20px;
+    background: #090909;
+}
+
+
+.experiencia-box h3 {
+    color: #d9a928;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 35px;
+}
+
+
+/* GRID */
+
+.experiencia-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+
+.experiencia-item {
+    padding: 10px 20px;
+    border-right: 1px solid #555;
+}
+
+
+.experiencia-item:last-child {
+    border-right: none;
+}
+
+
+.experiencia-item span {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+.experiencia-item h4 {
+    color: #d9a928;
+    font-size: 18px;
+    line-height: 1.3;
+    margin: 10px 0;
+}
+
+
+.experiencia-item p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* FRASE */
+
+.frase-experiencia {
+    margin-top: 50px;
+    color: #d9a928;
+    font-size: 22px;
+    font-style: italic;
+}
+
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 768px) {
+
+    .experiencia-certificaciones {
+        padding: 50px 15px;
+    }
+
+
+    .titulo-seccion {
+        font-size: 14px;
+    }
+
+
+    .experiencia-certificaciones h2 {
+        font-size: 38px;
+    }
+
+
+    .subtitulo-experiencia {
+        font-size: 16px;
+        margin-bottom: 35px;
+    }
+
+
+    .certificados {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+
+    .certificado img {
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+    }
+
+
+    .experiencia-box {
+        padding: 30px 15px;
+    }
+
+
+    .experiencia-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .experiencia-item {
+        border-right: none;
+        border-bottom: 1px solid #444;
+        padding: 25px 10px;
+    }
+
+
+    .experiencia-item:last-child {
+        border-bottom: none;
+    }
+
+
+    .frase-experiencia {
+        font-size: 18px;
+    }
+
+  }</style></body>
                                                                                                                                                                </html>
                                                                                                                                                                  
